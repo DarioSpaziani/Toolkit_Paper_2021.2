@@ -1,20 +1,23 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Data/Item")]
-public class ItemDefinition : ScriptableObject
+namespace Toolkit.SecondInventory
 {
-    public string ID = Guid.NewGuid().ToString();
-    public string itemName;
-    public string description;
-    public int sellPrice;
-    public Sprite icon;
-    public Dimensions SlotDimension;
-    
-    [Serializable]
-    public struct Dimensions
+    [CreateAssetMenu(fileName = "New Item", menuName = "Data/Item")]
+    public class ItemDefinition : ScriptableObject
     {
-        public int Height;
-        public int Width;
+        public string id = Guid.NewGuid().ToString();
+        public string itemName;
+        public string description;
+        public int sellPrice;
+        public Sprite icon;
+        public Dimensions slotDimension;
+    
+        [Serializable]
+        public struct Dimensions
+        {
+            public int height;
+            public int width;
+        }
     }
 }

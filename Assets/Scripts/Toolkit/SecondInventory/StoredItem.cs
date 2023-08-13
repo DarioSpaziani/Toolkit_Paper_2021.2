@@ -1,8 +1,11 @@
 using System;
 
-[Serializable]
-public class StoredItem
+namespace Toolkit.SecondInventory
 {
-    public ItemDefinition details;
-    public ItemVisual rootVisual;
+    [Serializable]
+    public class StoredItem
+    {
+        public ItemDefinition details;
+        public ItemVisual rootVisual;
+    }
 }

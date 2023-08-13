@@ -1,34 +1,36 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ItemVisual : VisualElement
+namespace Toolkit.SecondInventory
 {
-    private readonly ItemDefinition m_Item;
-
-    public ItemVisual(ItemDefinition item)
+    public class ItemVisual : VisualElement
     {
-        m_Item = item;
+        private readonly ItemDefinition _item;
 
-        name = $"{m_Item.itemName}";
-
-        style.height = m_Item.SlotDimension.Height * PlayerInventory.SlotDimension.Height;
-        style.width = m_Item.SlotDimension.Width * PlayerInventory.SlotDimension.Width;
-        style.visibility = Visibility.Hidden;
-
-        VisualElement icon = new VisualElement
+        public ItemVisual(ItemDefinition item)
         {
-            style = { backgroundImage = m_Item.icon.texture }
-        };
-    
-        Add(icon);
-        icon.AddToClassList("visual-icon");
-        AddToClassList("visual-icon-container");
-    }
+            _item = item;
 
-    public void SetPosition(Vector2 pos)
-    {
-        style.left = pos.x;
-        style.top = pos.y;
+            name = $"{_item.itemName}";
+
+            style.height = _item.slotDimension.height * PlayerInventory.SlotDimension.height;
+            style.width = _item.slotDimension.width * PlayerInventory.SlotDimension.width;
+            style.visibility = Visibility.Hidden;
+
+            VisualElement icon = new VisualElement
+            {
+                style = { backgroundImage = _item.icon.texture }
+            };
+    
+            Add(icon);
+            icon.AddToClassList("visual-icon");
+            AddToClassList("visual-icon-container");
+        }
+
+        public void SetPosition(Vector2 pos)
+        {
+            style.left = pos.x;
+            style.top = pos.y;
+        }
     }
 }

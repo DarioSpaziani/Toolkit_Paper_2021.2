@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,117 +5,120 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public sealed class PlayerInventory : MonoBehaviour
+namespace Toolkit.SecondInventory
 {
-    public static PlayerInventory instance;
+    public sealed class PlayerInventory : MonoBehaviour
+    {
+        private static PlayerInventory _instance;
 
-    private VisualElement m_Root;
-    private VisualElement m_InventoryGrid;
-    private static Label m_ItemDetailHeader;
-    private static Label m_ItemDetailBody;
-    private static Label m_ItemDetailPrice;
-    private bool m_IsInventoryReady;
-    public static ItemDefinition.Dimensions SlotDimension { get; private set; }
-    public List<StoredItem> StoredItems = new List<StoredItem>();
-    public ItemDefinition.Dimensions InventoryDimensions;
+        private VisualElement _root;
+        private VisualElement _inventoryGrid;
+        private static Label _itemDetailHeader;
+        private static Label _itemDetailBody;
+        private static Label _itemDetailPrice;
+        private bool _isInventoryReady;
+        public static ItemDefinition.Dimensions SlotDimension { get; private set; }
+        public List<StoredItem> storedItems = new List<StoredItem>();
+        public ItemDefinition.Dimensions inventoryDimensions;
     
-    private void Awake()
-    {
-        if (instance == null)
+        private void Awake()
         {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
-    }
-    
-    private void Start() => LoadInventory();
-    
-    private async void LoadInventory()
-    {
-        await UniTask.WaitUntil(() => m_IsInventoryReady);
-        foreach (StoredItem loadedItem in StoredItems)
-        {
-            ItemVisual inventoryItemVisual = new ItemVisual(loadedItem.details);
-                
-            AddItemToInventoryGrid(inventoryItemVisual);
-            bool inventoryHasSpace = await GetPositionForItem(inventoryItemVisual);
-            if (!inventoryHasSpace)
+            if (_instance == null)
             {
-                Debug.Log("No space - Cannot pick up the item");
-                RemoveItemFromInventoryGrid(inventoryItemVisual);
-                continue;
+                _instance = this;
             }
-            ConfigureInventoryItem(loadedItem, inventoryItemVisual);
-        }
-    }
-    
-    private void AddItemToInventoryGrid(VisualElement item) => m_InventoryGrid.Add(item);
-    private void RemoveItemFromInventoryGrid(VisualElement item) => m_InventoryGrid.Remove(item);
-    private static void ConfigureInventoryItem(StoredItem item, ItemVisual visual)
-    {
-        item.rootVisual = visual;
-        visual.style.visibility = Visibility.Visible;
-    }
-
-    private async void Configure()
-    {
-        m_Root = GetComponentInChildren<UIDocument>().rootVisualElement;
-        m_InventoryGrid = m_Root.Q<VisualElement>("Grid");
-        
-        VisualElement itemDetails = m_Root.Q<VisualElement>("ItemDetails");
-        
-        m_ItemDetailHeader = itemDetails.Q<Label>("Header");
-        m_ItemDetailBody = itemDetails.Q<Label>("Body");
-        m_ItemDetailPrice = itemDetails.Q<Label>("SellPrice");
-        
-        await UniTask.WaitForEndOfFrame();
-        
-        ConfigureSlotDimensions();
-        
-        m_IsInventoryReady = true;
-    }
-
-    private void ConfigureSlotDimensions()
-    {
-        VisualElement firstSlot = m_InventoryGrid.Children().First();
-
-        SlotDimension = new ItemDefinition.Dimensions()
-        {
-            Width = Mathf.RoundToInt(firstSlot.worldBound.width),
-            Height = Mathf.RoundToInt(firstSlot.worldBound.height)
-        };
-    }
-
-    private async Task<bool> GetPositionForItem(VisualElement newItem)
-    {
-        for (int y = 0; y < InventoryDimensions.Height; y++)
-        {
-            for (int x = 0; x < InventoryDimensions.Width; x++)
+            else
             {
-                SetItemPosition(newItem, new Vector2(SlotDimension.Width * x, SlotDimension.Height * y));
-
-                await UniTask.WaitForEndOfFrame();
-
-                StoredItem overlappingItem = StoredItems.FirstOrDefault(s =>
-                    s.rootVisual != null && 
-                    s.rootVisual.layout.Overlaps(newItem.layout));
+                Destroy(this);
+            }
+        }
+    
+        private void Start() => LoadInventory();
+    
+        private async void LoadInventory()
+        {
+            await UniTask.WaitUntil(() => _isInventoryReady);
+            foreach (StoredItem loadedItem in storedItems)
+            {
+                ItemVisual inventoryItemVisual = new ItemVisual(loadedItem.details);
                 
-                if (overlappingItem == null)
+                AddItemToInventoryGrid(inventoryItemVisual);
+                bool inventoryHasSpace = await GetPositionForItem(inventoryItemVisual);
+                if (!inventoryHasSpace)
                 {
-                    return true;
+                    Debug.Log("No space - Cannot pick up the item");
+                    RemoveItemFromInventoryGrid(inventoryItemVisual);
+                    continue;
                 }
+                ConfigureInventoryItem(loadedItem, inventoryItemVisual);
             }
-
         }
-        return false;
-    }
+    
+        private void AddItemToInventoryGrid(VisualElement item) => _inventoryGrid.Add(item);
+        private void RemoveItemFromInventoryGrid(VisualElement item) => _inventoryGrid.Remove(item);
+        private static void ConfigureInventoryItem(StoredItem item, ItemVisual visual)
+        {
+            item.rootVisual = visual;
+            visual.style.visibility = Visibility.Visible;
+        }
 
-    private static void SetItemPosition(VisualElement element, Vector2 vector)
-    {
-        element.style.left = vector.x;
-        element.style.top = vector.y;
+        private async void Configure()
+        {
+            _root = GetComponentInChildren<UIDocument>().rootVisualElement;
+            _inventoryGrid = _root.Q<VisualElement>("Grid");
+        
+            VisualElement itemDetails = _root.Q<VisualElement>("ItemDetails");
+        
+            _itemDetailHeader = itemDetails.Q<Label>("Header");
+            _itemDetailBody = itemDetails.Q<Label>("Body");
+            _itemDetailPrice = itemDetails.Q<Label>("SellPrice");
+        
+            await UniTask.WaitForEndOfFrame();
+        
+            ConfigureSlotDimensions();
+        
+            _isInventoryReady = true;
+        }
+
+        private void ConfigureSlotDimensions()
+        {
+            VisualElement firstSlot = _inventoryGrid.Children().First();
+
+            SlotDimension = new ItemDefinition.Dimensions()
+            {
+                width = Mathf.RoundToInt(firstSlot.worldBound.width),
+                height = Mathf.RoundToInt(firstSlot.worldBound.height)
+            };
+        }
+
+        private async Task<bool> GetPositionForItem(VisualElement newItem)
+        {
+            for (int y = 0; y < inventoryDimensions.height; y++)
+            {
+                for (int x = 0; x < inventoryDimensions.width; x++)
+                {
+                    SetItemPosition(newItem, new Vector2(SlotDimension.width * x, SlotDimension.height * y));
+
+                    await UniTask.WaitForEndOfFrame();
+
+                    StoredItem overlappingItem = storedItems.FirstOrDefault(s =>
+                        s.rootVisual != null && 
+                        s.rootVisual.layout.Overlaps(newItem.layout));
+                
+                    if (overlappingItem == null)
+                    {
+                        return true;
+                    }
+                }
+
+            }
+            return false;
+        }
+
+        private static void SetItemPosition(VisualElement element, Vector2 vector)
+        {
+            element.style.left = vector.x;
+            element.style.top = vector.y;
+        }
     }
 }
