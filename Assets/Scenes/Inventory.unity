@@ -206,6 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 784437347}
   - component: {fileID: 784437348}
+  - component: {fileID: 784437349}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -221,7 +222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784437346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.080002, y: 4, z: 68.79999}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -244,6 +245,26 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 4253254845f90314bbd9441d8cb6b76b, type: 3}
   m_SortingOrder: 0
+--- !u!114 &784437349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784437346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8245c61c3f244774dad864390c29c03d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StoredItems:
+  - details: {fileID: 11400000, guid: fdc783c0538f2f64c8d8f07ecd87151b, type: 2}
+  - details: {fileID: 11400000, guid: 613f15087574a7c4d8a3fee611df1228, type: 2}
+  - details: {fileID: 11400000, guid: 4d7c196691448ef489942cd77e732458, type: 2}
+  - details: {fileID: 11400000, guid: ee6058c1df825264ea67460d73e7e758, type: 2}
+  InventoryDimensions:
+    Height: 6
+    Width: 9
 --- !u!1 &949726323
 GameObject:
   m_ObjectHideFlags: 0

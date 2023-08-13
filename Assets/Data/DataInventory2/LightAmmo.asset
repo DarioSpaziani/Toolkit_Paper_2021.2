@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d001fca247e28124991b9a8654ce2d2e, type: 3}
+  m_Name: LightAmmo
+  m_EditorClassIdentifier: 
+  ID: 03eb9631-30dd-4e30-9d1b-76ac7d090b5d
+  itemName: Light Ammo
+  description: Light Ammo that can be used with a handgun.
+  sellPrice: 5
+  icon: {fileID: -415191925091435041, guid: 393021b790fe7bd4484e9f84c76ad03e, type: 3}
+  SlotDimension:
+    Height: 1
+    Width: 1

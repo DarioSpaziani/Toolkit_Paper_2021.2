@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d001fca247e28124991b9a8654ce2d2e, type: 3}
+  m_Name: Flamethrowe
+  m_EditorClassIdentifier: 
+  ID: 2d1bacad-99c4-4890-a457-cb9b052d96e3
+  itemName: Flamethrowe
+  description: A level 5 Flamethrower that packs quite the punch.
+  sellPrice: 50
+  icon: {fileID: 7219410737084855071, guid: 393021b790fe7bd4484e9f84c76ad03e, type: 3}
+  SlotDimension:
+    Height: 1
+    Width: 2
