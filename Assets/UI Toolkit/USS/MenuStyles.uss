@@ -1,0 +1,27 @@
+.menu-button {
+    font-size: 70px;
+    border-left-color: rgba(255, 0, 0, 0);
+    border-right-color: rgba(255, 0, 0, 0);
+    border-top-color: rgba(255, 0, 0, 0);
+    border-bottom-color: rgba(255, 0, 0, 0);
+    width: auto;
+    -unity-text-outline-color: rgb(255, 255, 255);
+    -unity-text-outline-width: 0;
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0.98);
+    -unity-font-definition: url('project://database/Assets/Font/potra/Potra%20SDF.asset?fileID=11400000&guid=9667b47bedc490b419c9996746bf66c2&type=2#Potra SDF');
+    transition-duration: 0.2s;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+.menu-button:hover {
+    -unity-font-definition: url('project://database/Assets/Font/potra/Potra%20SDF.asset?fileID=11400000&guid=9667b47bedc490b419c9996746bf66c2&type=2#Potra SDF');
+    -unity-font-style: bold;
+    color: rgb(255, 255, 255);
+    font-size: 65px;
+    -unity-text-outline-color: rgba(255, 255, 255, 0);
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    rotate: -10deg;
+    background-color: rgba(0, 0, 0, 0);
+    transition-duration: 0.5s;
+}

@@ -1,0 +1,7 @@
+.hp-bar .unity-progress-bar__progress {
+    background-color: red;
+}
+
+.stamina-bar .unity-progress-bar__progress {
+    background-color: greenyellow;
+}

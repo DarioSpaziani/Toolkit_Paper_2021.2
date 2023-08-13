@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS/BarStatusStyles.uss?fileID=7433441132597879392&amp;guid=e242a72b174558141acdf0d9f67787fb&amp;type=3#BarStatusStyles" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:ProgressBar value="100" title="HP" class="hp-bar" style="width: 30%;" />
+        <ui:ProgressBar value="100" title="STAMINA" class="stamina-bar" style="width: 25%;" />
+    </ui:VisualElement>
+</ui:UXML>

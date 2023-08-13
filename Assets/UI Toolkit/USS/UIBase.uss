@@ -1,0 +1,28 @@
+.button-pause {
+    flex-grow: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: auto;
+    align-self: stretch;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    -unity-font: url('project://database/Assets/Font/league/League.otf?fileID=12800000&guid=5ac031775c4f8f648bd626b48306e02c&type=3#League');
+    -unity-font-definition: url('project://database/Assets/Font/potra/Potra%20SDF.asset?fileID=11400000&guid=9667b47bedc490b419c9996746bf66c2&type=2#Potra SDF');
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    font-size: 30px;
+    -unity-font-style: normal;
+    -unity-text-align: middle-center;
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(255, 255, 255);
+    text-shadow: 0 0 0 rgb(233, 226, 226);
+    letter-spacing: 0;
+    word-spacing: 0;
+    -unity-paragraph-spacing: 0;
+    max-width: none;
+    flex-basis: 50px;
+    flex-shrink: 1;
+}

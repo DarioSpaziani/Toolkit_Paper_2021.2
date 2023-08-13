@@ -1,0 +1,3 @@
+.stamina-bar .unity-progress-bar__progress{
+    background-color : lawngreen;
+}
