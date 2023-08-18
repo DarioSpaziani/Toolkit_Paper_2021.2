@@ -43,26 +43,30 @@ namespace Editor
 
         private void OnSceneGUI(SceneView sceneView)
         {
-            if (!activeToggle.value) return;
-            var evt = Event.current;
-
-            if (evt.IsLeftMouseButtonDown())
+            if (sceneView != null)
             {
-                Debug.Log("Left Button Clicked");
+                if (!activeToggle.value) return;
+                var evt = Event.current;
 
-                var ray = HandleUtility.GUIPointToWorldRay(evt.mousePosition);
-                Physics.Raycast(ray, out var raycastHit, Mathf.Infinity, layerInput.value);
-
-                if (raycastHit.collider)
+                if (evt.IsLeftMouseButtonDown())
                 {
-                    var obj = CreatePrefab(raycastHit.point);
-                    ApplyRandomRotation(obj,raycastHit.normal);
-                    ApplyRandomScale(obj);
-                    
-                    Undo.RegisterCreatedObjectUndo(obj, "Prefab Spawned");
-                }
+                    Debug.Log("Left Button Clicked");
 
+                    var ray = HandleUtility.GUIPointToWorldRay(evt.mousePosition);
+                    Physics.Raycast(ray, out var raycastHit, Mathf.Infinity, layerInput.value);
+
+                    if (raycastHit.collider)
+                    {
+                        var obj = CreatePrefab(raycastHit.point);
+                        ApplyRandomRotation(obj,raycastHit.normal);
+                        ApplyRandomScale(obj);
+                    
+                        Undo.RegisterCreatedObjectUndo(obj, "Prefab Spawned");
+                    }
+
+                }
             }
+            
         }
         
         private GameObject CreatePrefab(Vector3 pos)
