@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d001fca247e28124991b9a8654ce2d2e, type: 3}
   m_Name: Medikit
   m_EditorClassIdentifier: 
-  ID: 5f12e1b4-19c2-440e-a9b3-994ba5d519f8
+  id: caa382bc-6651-4ed6-95f6-bf1635085b71
   itemName: Medikit
   description: A medium medkit that heals for 100 health.
   sellPrice: 100
   icon: {fileID: -2697583410823666483, guid: 006f7f82ca50d224a993a4ca8304ad81, type: 3}
-  SlotDimension:
-    Height: 1
-    Width: 1
+  slotDimension:
+    height: 1
+    width: 1

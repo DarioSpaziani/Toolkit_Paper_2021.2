@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement name="GeneralSettings" style="-unity-font-style: normal;">
+        <uie:LayerMaskField label="LayerMask" name="Layer" />
+        <uie:ObjectField label="Object Field" type="UnityEngine.GameObject, UnityEngine.CoreModule" name="Prefab" allow-scene-objects="false" />
+    </ui:VisualElement>
+    <ui:VisualElement name="InstantiationSettings">
+        <ui:Label text="Rotation" display-tooltip-when-elided="true" name="Rotation" style="-unity-text-align: upper-center; -unity-font-style: bold; margin-left: 8px; margin-right: 8px; margin-top: 8px; margin-bottom: 8px;" />
+        <uie:Vector3Field label="Min Rotation" name="MinRotation" />
+        <uie:Vector3Field label="Max Rotation" name="MaxRotation" />
+        <ui:Label text="Scale" display-tooltip-when-elided="true" enable-rich-text="false" name="Scale" style="-unity-font-style: bold; -unity-text-align: upper-center; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;" />
+        <uie:FloatField label="Min Scale" value="0.7" name="MinScale" />
+        <uie:FloatField label="Max Scale" value="1" name="MaxScale" />
+    </ui:VisualElement>
+    <ui:VisualElement style="margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;">
+        <ui:Toggle label="Active" name="Active" style="align-items: flex-end;" />
+        <ui:Toggle label="Align to Normal" name="AlignToNormal" style="align-items: flex-end;" />
+    </ui:VisualElement>
+</ui:UXML>

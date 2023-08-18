@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/Document/USS/BarStatusStyles.uss?fileID=7433441132597879392&amp;guid=e242a72b174558141acdf0d9f67787fb&amp;type=3#BarStatusStyles" />
+    <Style src="project://database/Assets/UI%20Toolkit/USS/BarStatusStyles.uss?fileID=7433441132597879392&amp;guid=e242a72b174558141acdf0d9f67787fb&amp;type=3#BarStatusStyles" />
     <ui:VisualElement name="BarStatus" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); height: 324px;">
-        <ui:ProgressBar value="100" title="HP" name="HP" class="hp-bar" style="width: 35%;" />
+        <ui:ProgressBar value="100" title="HP" name="HP" low-value="0" tabindex="0" class="hp-bar" style="width: 35%;" />
         <ui:ProgressBar value="100" title="STAMINA" name="Stamina" class="hp-bar stamina-bar" style="width: 30%;" />
     </ui:VisualElement>
 </ui:UXML>

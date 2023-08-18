@@ -12,7 +12,7 @@ namespace Toolkit.SecondInventory
         public int sellPrice;
         public Sprite icon;
         public Dimensions slotDimension;
-    
+
         [Serializable]
         public struct Dimensions
         {

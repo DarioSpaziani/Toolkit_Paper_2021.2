@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d001fca247e28124991b9a8654ce2d2e, type: 3}
   m_Name: Flamethrowe
   m_EditorClassIdentifier: 
-  ID: 2d1bacad-99c4-4890-a457-cb9b052d96e3
+  id: 17cff496-232e-44ff-85f3-7bd1dfe1b30c
   itemName: Flamethrowe
   description: A level 5 Flamethrower that packs quite the punch.
   sellPrice: 50
-  icon: {fileID: 7219410737084855071, guid: 393021b790fe7bd4484e9f84c76ad03e, type: 3}
-  SlotDimension:
-    Height: 1
-    Width: 2
+  icon: {fileID: 21300000, guid: 814ca99658ac6f648b1c5c29d31d8119, type: 3}
+  slotDimension:
+    height: 1
+    width: 2

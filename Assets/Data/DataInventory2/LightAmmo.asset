@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d001fca247e28124991b9a8654ce2d2e, type: 3}
   m_Name: LightAmmo
   m_EditorClassIdentifier: 
-  ID: 03eb9631-30dd-4e30-9d1b-76ac7d090b5d
+  id: 91e6c2e0-1179-4f0b-b482-f5e095081492
   itemName: Light Ammo
   description: Light Ammo that can be used with a handgun.
   sellPrice: 5
   icon: {fileID: -415191925091435041, guid: 393021b790fe7bd4484e9f84c76ad03e, type: 3}
-  SlotDimension:
-    Height: 1
-    Width: 1
+  slotDimension:
+    height: 1
+    width: 1
