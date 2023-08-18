@@ -1,0 +1,55 @@
+.toolbar-button {
+    height: 100px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url('project://database/Assets/AssetStore/RPG_inventory_icons/a_bag.png?fileID=2800000&guid=fe025e83f69d0b54f8a4fe3c7c128fd7&type=3#a_bag');
+    justify-content: center;
+    align-self: flex-start;
+    align-items: auto;
+    flex-basis: auto;
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-left-color: rgb(152, 152, 152);
+    border-right-color: rgb(152, 152, 152);
+    border-top-color: rgb(152, 152, 152);
+    border-bottom-color: rgb(152, 152, 152);
+    -unity-background-scale-mode: stretch-to-fill;
+    -unity-slice-scale: 1.5px;
+    -unity-slice-left: 1;
+    -unity-slice-top: 1;
+    -unity-slice-right: 1;
+    -unity-slice-bottom: 1;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    max-width: 100px;
+    min-width: 100px;
+    max-height: 100px;
+    min-height: 100px;
+}
+
+.toolbar-button:hover {
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0);
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+}
+
+.toolbar-button:active {
+    background-color: rgb(255, 255, 255);
+    -unity-background-image-tint-color: rgb(192, 192, 192);
+}
