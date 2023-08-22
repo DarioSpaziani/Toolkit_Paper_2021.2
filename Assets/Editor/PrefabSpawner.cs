@@ -1,9 +1,6 @@
-using System;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
-using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
@@ -13,15 +10,15 @@ namespace Editor
     {
         [SerializeField] private VisualTreeAsset tree;
 
-        private LayerMaskField layerInput;
-        private Vector3Field minRotationInput;
-        private Vector3Field maxRotationInput;
-        private FloatField minScaleInput;
-        private FloatField maxScaleInput;
-        private Toggle activeToggle;
-        private Toggle alignToNormalToogle;
+        private LayerMaskField _layerInput;
+        private Vector3Field _minRotationInput;
+        private Vector3Field _maxRotationInput;
+        private FloatField _minScaleInput;
+        private FloatField _maxScaleInput;
+        private Toggle _activeToggle;
+        private Toggle _alignToNormalToogle;
 
-        private GameObject prefab;
+        private GameObject _prefab;
 
         [MenuItem("Tools/Spawner")]
         public static void ShowEditor()
@@ -45,15 +42,13 @@ namespace Editor
         {
             if (sceneView != null)
             {
-                if (!activeToggle.value) return;
+                if (!_activeToggle.value) return;
                 var evt = Event.current;
 
                 if (evt.IsLeftMouseButtonDown())
                 {
-                    Debug.Log("Left Button Clicked");
-
                     var ray = HandleUtility.GUIPointToWorldRay(evt.mousePosition);
-                    Physics.Raycast(ray, out var raycastHit, Mathf.Infinity, layerInput.value);
+                    Physics.Raycast(ray, out var raycastHit, Mathf.Infinity, _layerInput.value);
 
                     if (raycastHit.collider)
                     {
@@ -61,9 +56,8 @@ namespace Editor
                         ApplyRandomRotation(obj,raycastHit.normal);
                         ApplyRandomScale(obj);
                     
-                        Undo.RegisterCreatedObjectUndo(obj, "Prefab Spawned");
+                        Undo.RegisterCreatedObjectUndo(obj, "Prefab Spawned");  //utile per tornare indietro di un azione nel caso si commetta uno sbaglio
                     }
-
                 }
             }
             
@@ -71,25 +65,28 @@ namespace Editor
         
         private GameObject CreatePrefab(Vector3 pos)
         {
-            var obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject; //permetti di creare un prefab è come l'instantiate
+            var obj = PrefabUtility.InstantiatePrefab(_prefab) as GameObject; //permetti di creare un prefab è come l'instantiate
 
-            obj.transform.position = pos;
-
+            if (obj != null)
+            {
+                obj.transform.position = pos;
+                
+            }
             return obj;
         }
 
         private void ApplyRandomScale(GameObject obj)
         {
-            var minScale = minScaleInput.value;
-            var maxScale = maxScaleInput.value;
+            var minScale = _minScaleInput.value;
+            var maxScale = _maxScaleInput.value;
             obj.transform.localScale = Vector3.one * Random.Range(minScale, maxScale);
         }
         
         private void ApplyRandomRotation(GameObject obj, Vector3 normal)
         {
-            var minRotation = minRotationInput.value;
-            var maxRotation = maxRotationInput.value;
-            var alignToNormal = alignToNormalToogle.value;
+            var minRotation = _minRotationInput.value;
+            var maxRotation = _maxRotationInput.value;
+            var alignToNormal = _alignToNormalToogle.value;
 
             if (alignToNormal)
             {
@@ -106,18 +103,18 @@ namespace Editor
 
         private void InitFields()
         {
-            layerInput = rootVisualElement.Q<LayerMaskField>("Layer");
-            minRotationInput = rootVisualElement.Q<Vector3Field>("MinRotation");
-            maxRotationInput = rootVisualElement.Q<Vector3Field>("MaxRotation");
-            minScaleInput = rootVisualElement.Q<FloatField>("MinScale");
-            maxScaleInput = rootVisualElement.Q<FloatField>("MaxScale");
-            activeToggle = rootVisualElement.Q<Toggle>("Active");
-            alignToNormalToogle = rootVisualElement.Q<Toggle>("AlignToNormal");
+            _layerInput = rootVisualElement.Q<LayerMaskField>("Layer");
+            _minRotationInput = rootVisualElement.Q<Vector3Field>("MinRotation");
+            _maxRotationInput = rootVisualElement.Q<Vector3Field>("MaxRotation");
+            _minScaleInput = rootVisualElement.Q<FloatField>("MinScale");
+            _maxScaleInput = rootVisualElement.Q<FloatField>("MaxScale");
+            _activeToggle = rootVisualElement.Q<Toggle>("Active");
+            _alignToNormalToogle = rootVisualElement.Q<Toggle>("AlignToNormal");
 
             var prefabInput = rootVisualElement.Q<ObjectField>("Prefab");
             prefabInput.RegisterValueChangedCallback(evt =>
             {
-                prefab = evt.newValue as GameObject;
+                _prefab = evt.newValue as GameObject;
             });
         }
     }

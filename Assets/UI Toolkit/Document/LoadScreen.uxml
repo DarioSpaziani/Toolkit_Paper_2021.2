@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="LoadingBar_Toolkit" src="project://database/Assets/UI%20Toolkit/Document/ProgressBar.uxml?fileID=9197481963319205126&amp;guid=006f2426c3e58d04381d2f015acd7c2a&amp;type=3#ProgressBar" />
+    <ui:Instance template="LoadingBar_Toolkit" name="ProgressBar" style="align-items: center; justify-content: flex-end; flex-grow: 1;" />
+</ui:UXML>

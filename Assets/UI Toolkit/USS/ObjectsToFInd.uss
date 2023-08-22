@@ -6,7 +6,7 @@
     border-right-color: rgba(0, 0, 0, 0);
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
-    background-image: url('project://database/Assets/AssetStore/RPG_inventory_icons/a_apple.png?fileID=2800000&guid=5d9ba4e7d0964044ea54abe409d81dfd&type=3#a_apple');
+    background-image: url('project://database/Assets/AssetStore/RPG_inventory_icons/apple.png?fileID=2800000&guid=5d9ba4e7d0964044ea54abe409d81dfd&type=3#apple');
     position: relative;
     align-items: auto;
 }
@@ -14,4 +14,27 @@
 .objects-button:active {
     background-color: rgba(255, 255, 255, 0);
     -unity-background-image-tint-color: rgba(255, 255, 255, 0.53);
+}
+
+.tracker-button {
+    align-items: auto;
+    justify-content: flex-start;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    flex-grow: 1;
+    position: relative;
+}
+
+.tracker-label {
+    -unity-font-style: bold;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 255);
+    -unity-font-definition: url('project://database/Assets/Font/league/League%20SDF.asset?fileID=11400000&guid=ebe74187b776ac343aaced5c35c21fdb&type=2#League SDF');
+    -unity-text-align: middle-center;
+    white-space: normal;
 }
