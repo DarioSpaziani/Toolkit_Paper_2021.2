@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="Progressbar_Circular" src="project://database/Assets/UI%20Toolkit/Document/Progressbar_Circular.uxml?fileID=9197481963319205126&amp;guid=9856f63f4726b7942a381a63e283bc10&amp;type=3" />
+    <ui:Instance template="Progressbar_Circular" style="flex-grow: 1; align-items: center; justify-content: flex-end; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 20px;" />
+</ui:UXML>

@@ -1,0 +1,38 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS/MainScreen.uss?fileID=7433441132597879392&amp;guid=d74166e09de33c848ba1303e2cafb821&amp;type=3#MainScreen" />
+    <ui:VisualElement name="Container" style="background-image: url(&apos;project://database/Assets/Sprites/background.jpg?fileID=2800000&amp;guid=797f0697484caa8459bc0b5d7c236db7&amp;type=3#background&apos;);">
+        <ui:VisualElement name="Menu" class="pop-animation-hide">
+            <ui:VisualElement name="Navigation">
+                <ui:VisualElement name="MainNav">
+                    <ui:Label text="CONTINUE" display-tooltip-when-elided="true" name="Option" class="pop-animation-hide" style="-unity-font: url(&apos;project://database/Assets/Fonts/Syncopate-Regular.ttf?fileID=12800000&amp;guid=96227cad944714b469b8b3418dc07cf4&amp;type=3#Syncopate-Regular&apos;);" />
+                    <ui:Label text="NEW GAME" display-tooltip-when-elided="true" name="Option" class="pop-animation-hide" />
+                    <ui:Label text="MULTIPLAYER" display-tooltip-when-elided="true" name="Option" class="pop-animation-hide" />
+                    <ui:Label text="SETTINGS" display-tooltip-when-elided="true" name="Option" class="pop-animation-hide" />
+                    <ui:Label text="QUIT" display-tooltip-when-elided="true" name="Option" class="pop-animation-hide" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="DecorativeBar" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Content" style="flex-grow: 1;">
+            <ui:Label text="GAME&#10;LOGO HERE" display-tooltip-when-elided="true" name="Header" />
+            <ui:VisualElement name="Body" style="flex-shrink: 1; flex-grow: 1; width: 908px;">
+                <ui:VisualElement name="WidgetContainer">
+                    <ui:VisualElement name="Image" />
+                    <ui:VisualElement name="NavContainer">
+                        <ui:VisualElement name="Selector" class="selector-filled" />
+                        <ui:VisualElement name="Selector" />
+                        <ui:VisualElement name="Selector" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="WidgetContainer">
+                    <ui:VisualElement name="Image" />
+                    <ui:VisualElement name="NavContainer">
+                        <ui:VisualElement name="Selector" class="selector-filled" />
+                        <ui:VisualElement name="Selector" />
+                        <ui:VisualElement name="Selector" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

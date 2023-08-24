@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/UI%20Toolkit/USS/MapStyles.uss?fileID=7433441132597879392&amp;guid=2ab067ac65e1ad3479e25ca43b66da44&amp;type=3#MapStyles" />
     <ui:VisualElement name="Container" class="root-container-mini" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); width: auto; justify-content: center; align-self: flex-end;">
         <ui:VisualElement name="Map" class="map-container root-container-mini" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0);">
-            <ui:VisualElement name="Image" class="map-img root-container-mini" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 1024px; height: 1024px; top: -501px; left: -455px; align-self: center;">
+            <ui:VisualElement name="Image" class="map-img root-container-mini" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 1024px; height: 1024px; top: -501px; left: -455px; align-self: center; background-image: url(&apos;project://database/Assets/06-Sprites/map.png?fileID=21300000&amp;guid=c42c07efa9282924fb94ce7c6409c69d&amp;type=3#map&apos;);">
                 <ui:VisualElement name="Player" class="player-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: -4px; position: absolute; bottom: 433px; height: -6px; left: 510px;">
                     <ui:VisualElement name="Cone" class="player-cone" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); top: -56px; left: -44px;">
                         <ui:VisualElement name="Arrow" class="player-arrow" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); width: 17px; height: 14px; opacity: 1; top: 12px;" />

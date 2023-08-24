@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Container" style="align-items: center; justify-content: center; width: 128px; height: 128px;">
+        <ui:VisualElement name="Outer_Pivot" style="width: 1px; height: 1px;">
+            <ui:VisualElement name="Outer_Image" style="left: -64px; top: -64px; flex-shrink: 0; width: 128px; height: 128px; background-image: url(&apos;project://database/Assets/Material/OuterCircle.png?fileID=2800000&amp;guid=d43a7fd9db3674940be7173905820483&amp;type=3#OuterCircle&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Inner_Pivot" style="width: 1px; height: 1px;">
+            <ui:VisualElement name="Inner_Image" style="left: -50px; top: -50px; flex-shrink: 0; width: 100px; height: 100px; background-image: url(&apos;project://database/Assets/Material/InnerCircle.png?fileID=2800000&amp;guid=83d3ffdaa675aec44907567fdee57822&amp;type=3#InnerCircle&apos;);" />
+        </ui:VisualElement>
+        <ui:Label text="100%" display-tooltip-when-elided="true" name="txt_Percentage" style="position: absolute; width: 128px; height: 128px; -unity-font-style: normal; font-size: 30px; -unity-text-align: middle-center; color: rgba(255, 255, 255, 255);" />
+    </ui:VisualElement>
+</ui:UXML>
