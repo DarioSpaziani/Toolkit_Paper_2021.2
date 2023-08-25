@@ -1,21 +1,17 @@
 using _01_Scripts;
 using UnityEditor;
+using UnityEditor.UI;
+using UnityEngine;
 
 namespace Editor
 {
     [CustomEditor(typeof(ObjectBuilderScript))]
-    public class ObjectBuilder : EditorWindow
+    public class ObjectBuilder : UnityEditor.Editor
     {
         [MenuItem("Tools/SpawnerIMGUI")]
-        public void OnInspectorGUI()
+        public override void OnInspectorGUI()
         {
-            //     DrawDefaultInspector();
-            //
-            //
-            //     if(Input.GetKeyDown(KeyCode.A))
-            //     {
-            //         myScript.BuildObject();
-            //     }
+            DrawDefaultInspector();
         }
     }
 }
