@@ -45,7 +45,7 @@ namespace Editor
 
         private void OnSceneGUI(SceneView sceneView)
         {
-            if (sceneView != null)
+            if (sceneView)
             {
                 if (!_activeToggle.value) return;
                 var evt = Event.current;
