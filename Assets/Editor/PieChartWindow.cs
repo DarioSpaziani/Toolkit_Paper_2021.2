@@ -6,29 +6,25 @@ namespace Editor
 {
     public class PieChartWindow : EditorWindow
     {
-        [MenuItem("Tools/PieChartWindow")]
+        //can not possible change variables at runtime. For now
+        [MenuItem("Tools/PieChart window")]
         public static void ShowWindow()
         {
-            GetWindow<PieChartWindow>().Show();
-
-            PieChartWindow window = CreateInstance<PieChartWindow>();
+            PieChartWindow window = GetWindow<PieChartWindow>();
             window.titleContent = new GUIContent("Pie Chart Window");
         }
 
         public void CreateGUI()
         {
             VisualElement root = rootVisualElement;
-            Label label = new Label("Pie chart");
-            
-            root.Add(new Label("Pie chart"));
-            root.Add(new PieChart());
-            root.Add(new Label());
-            
+
             //Create button
-            Button button = new Button();
-            button.name = "button";
-            button.text = "Randomize";
-            root.Add(button);
+            // Button button = new Button();
+            // button.name = "button";
+            // button.text = "Randomize";
+            // root.Add(button);
+
+            root.Add(new PieChart());
         }
     }
 }

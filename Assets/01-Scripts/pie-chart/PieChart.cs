@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,7 +5,7 @@ public class PieChart : VisualElement
 {
     float m_Radius = 100.0f;
     float m_Value = 40.0f;
-    private float m_Value2 = 10f;
+    private float m_Value2 = 10.0f;
 
     VisualElement m_Chart;
 
@@ -26,7 +24,7 @@ public class PieChart : VisualElement
     public float diameter => m_Radius * 2.0f;
 
     public float value {
-        get { return m_Value; }
+        get => m_Value;
         set { m_Value = value; MarkDirtyRepaint(); }
     }
 
@@ -58,9 +56,11 @@ public class PieChart : VisualElement
             new Color32(182,4,122,255),
             new Color32(251,120,19,255)
         };
+        
         float angle = 0.0f;
         float anglePct = 0.0f;
         int k = 0;
+        
         foreach (var pct in percentages)
         {
             anglePct += 360.0f * (pct / 100);

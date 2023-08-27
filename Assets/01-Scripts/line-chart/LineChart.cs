@@ -6,7 +6,7 @@ namespace _01_Scripts.line_chart
     public class LineChart : VisualElement
     {
         VisualElement _mLine;
-    
+
         public LineChart()
         {
             generateVisualContent += DrawCanvas;
@@ -17,10 +17,10 @@ namespace _01_Scripts.line_chart
      
             paint2D.fillColor = Color.white;
             paint2D.BeginPath();
-            paint2D.MoveTo(new Vector2(100, 120));
-            paint2D.LineTo(new Vector2(120, 90));
-            paint2D.LineTo(new Vector2(190, 70));
-            paint2D.LineTo(new Vector2(210, 70));
+            paint2D.MoveTo(new Vector2(80f, 120f));
+            paint2D.LineTo(new Vector2(75f, 130f));
+            paint2D.LineTo(new Vector2(131f, 012f));
+            paint2D.LineTo(new Vector2(45f, 50f));
             paint2D.ClosePath();
             paint2D.Fill();
         }

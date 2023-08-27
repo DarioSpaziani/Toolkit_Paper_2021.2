@@ -8,15 +8,14 @@ public class LineChartWindow : EditorWindow
     [MenuItem("Tools/LineChartWindow")]
     public static void ShowWindow()
     {
-        GetWindow<LineChartWindow>().Show();
-        LineChartWindow window = CreateInstance<LineChartWindow>();
+        LineChartWindow window = GetWindow<LineChartWindow>();
         window.titleContent = new GUIContent("Line Chart Window");
     }
 
     private void CreateGUI()
     {
         VisualElement root = rootVisualElement;
-        
+
         root.Add(new LineChart());
     }
 }
