@@ -17,10 +17,14 @@ namespace _01_Scripts.line_chart
      
             paint2D.fillColor = Color.white;
             paint2D.BeginPath();
-            paint2D.MoveTo(new Vector2(80f, 120f));
-            paint2D.LineTo(new Vector2(75f, 130f));
-            paint2D.LineTo(new Vector2(131f, 012f));
-            paint2D.LineTo(new Vector2(45f, 50f));
+            paint2D.MoveTo(new Vector2(150f, 150));
+            paint2D.LineTo(new Vector2(170, 200));
+            paint2D.LineTo(new Vector2(170, 160));
+            paint2D.LineTo(new Vector2(210, 160));
+            paint2D.LineTo(new Vector2(210, 140));
+            paint2D.LineTo(new Vector2(170, 140));
+            paint2D.LineTo(new Vector2(170, 100));
+            paint2D.LineTo(new Vector2(150, 150));
             paint2D.ClosePath();
             paint2D.Fill();
         }
