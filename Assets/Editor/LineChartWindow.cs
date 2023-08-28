@@ -3,19 +3,22 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class LineChartWindow : EditorWindow
+namespace Editor
 {
-    [MenuItem("Tools/LineChartWindow")]
-    public static void ShowWindow()
+    public class LineChartWindow : EditorWindow
     {
-        LineChartWindow window = GetWindow<LineChartWindow>();
-        window.titleContent = new GUIContent("Line Chart Window");
-    }
+        [MenuItem("Tools/LineChart Window")]
+        public static void ShowWindow()
+        {
+            LineChartWindow window = GetWindow<LineChartWindow>();
+            window.titleContent = new GUIContent("Line Chart Window");
+        }
 
-    private void CreateGUI()
-    {
-        VisualElement root = rootVisualElement;
-
-        root.Add(new LineChart());
+        void CreateGUI()
+        {
+            VisualElement root = rootVisualElement;
+        
+            root.Add(new LineChart());
+        }
     }
 }

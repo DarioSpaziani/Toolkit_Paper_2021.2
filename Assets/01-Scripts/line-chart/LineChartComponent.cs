@@ -7,7 +7,7 @@ namespace _01_Scripts.line_chart
     public class LineChartComponent : MonoBehaviour
     {
         private LineChart _lineChart;
-
+        
         private void Start()
         {
             _lineChart = new LineChart();

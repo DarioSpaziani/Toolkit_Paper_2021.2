@@ -1,3 +1,4 @@
+using _01_Scripts.pie_chart;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -17,12 +18,6 @@ namespace Editor
         public void CreateGUI()
         {
             VisualElement root = rootVisualElement;
-
-            //Create button
-            // Button button = new Button();
-            // button.name = "button";
-            // button.text = "Randomize";
-            // root.Add(button);
 
             root.Add(new PieChart());
         }
