@@ -9,16 +9,16 @@ namespace _01_Scripts.line_chart
     
         #region Line Variables
 
-        public Vector2 p0Line = new(100, 100);
-        public Vector2 p1Line = new(150, 120);
-        public Vector2 p2Line = new(200, 150);
-        public Vector2 p3Line = new(250, 80);
-        public Vector2 p4Line = new(300, 120);
-        public Vector2 p5Line = new(350, 40);
-        public Vector2 p6Line = new(400, 50);
-        public Vector2 p7Line = new(450, 70);
-        public Vector2 p8Line = new(500, 120);
-        public Vector2 p9Line = new(550, 100);
+        private readonly Vector2 _p0Line = new(100, 100);
+        private readonly Vector2 _p1Line = new(150, 120);
+        private readonly Vector2 _p2Line = new(200, 150);
+        private readonly Vector2 _p3Line = new(250, 80);
+        private readonly Vector2 _p4Line = new(300, 120);
+        private readonly Vector2 _p5Line = new(350, 40);
+        private readonly Vector2 _p6Line = new(400, 50);
+        private readonly Vector2 _p7Line = new(450, 70);
+        private readonly Vector2 _p8Line = new(500, 120);
+        private readonly Vector2 _p9Line = new(550, 100);
 
         #endregion
 
@@ -48,6 +48,16 @@ namespace _01_Scripts.line_chart
             paint2D.LineTo(p7Line);
             paint2D.LineTo(p8Line);
             paint2D.LineTo(p9Line);
+            paint2D.MoveTo(_p0Line);
+            paint2D.LineTo(_p1Line);
+            paint2D.LineTo(_p2Line);
+            paint2D.LineTo(_p3Line);
+            paint2D.LineTo(_p4Line);
+            paint2D.LineTo(_p5Line);
+            paint2D.LineTo(_p6Line);
+            paint2D.LineTo(_p7Line);
+            paint2D.LineTo(_p8Line);
+            paint2D.LineTo(_p9Line);
             paint2D.Stroke();
 
             //Design a circle using Arc path
@@ -64,6 +74,7 @@ namespace _01_Scripts.line_chart
             // paint2D.ArcTo(p4Line,p5Line,20f);
             // paint2D.ArcTo(p6Line,p7Line,5f);
             // paint2D.ArcTo(p8Line,p9Line,1f);
+            
         }
     }
 }
