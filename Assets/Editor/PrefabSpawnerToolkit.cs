@@ -45,9 +45,12 @@ namespace Editor
 
         private void OnSceneGUI(SceneView sceneView)
         {
-            if (sceneView)
+            if (sceneView != null)
             {
-                if (!_activeToggle.value) return;
+                if (!_activeToggle.value)
+                {
+                    return;
+                }
                 var evt = Event.current;
 
                 if (evt.IsLeftMouseButtonDown())

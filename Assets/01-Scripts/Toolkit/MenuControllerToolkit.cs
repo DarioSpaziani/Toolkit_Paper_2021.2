@@ -49,7 +49,7 @@ namespace _01_Scripts.Toolkit
 
         private void OnPlayButtonClicked()
         {
-            SceneManager.LoadScene("Game_UI");
+            SceneManager.LoadScene("Inventory");
         }
 
         private void OnExitButtonClicked()
