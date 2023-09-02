@@ -1769,10 +1769,10 @@ RectTransform:
   m_Father: {fileID: 5783428118607946312}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 179.99994, y: -158}
-  m_SizeDelta: {x: 359.99988, y: 105.33333}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1251695824
 MonoBehaviour:
@@ -2248,10 +2248,10 @@ RectTransform:
   m_Father: {fileID: 5783428118607946312}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 179.99994, y: -52.666664}
-  m_SizeDelta: {x: 359.99988, y: 105.33333}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1656404545
 MonoBehaviour:
@@ -2661,10 +2661,10 @@ RectTransform:
   m_Father: {fileID: 5783428118607946312}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 179.99994, y: -263.3333}
-  m_SizeDelta: {x: 359.99988, y: 105.33333}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999244397
 MonoBehaviour:
@@ -3072,12 +3072,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6040709599239588122, guid: 9a8fd57011066c04ebd970256c08e592, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9094227311591868172, guid: 9a8fd57011066c04ebd970256c08e592, type: 3}
       propertyPath: m_Volume
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9094227311591868172, guid: 9a8fd57011066c04ebd970256c08e592, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: efbffcbb2dceb2e4fad220e6529f43fc, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3162,7 +3166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5609004569137008300
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3436,7 +3440,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bae2012a2842c374baab98ca7afca47c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: efbffcbb2dceb2e4fad220e6529f43fc, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
