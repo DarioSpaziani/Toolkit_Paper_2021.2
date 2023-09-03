@@ -51,21 +51,13 @@ namespace _01_Scripts.line_chart
             paint2D.LineTo(_p9Line);
             paint2D.Stroke();
 
-            //Design a circle using Arc path
+            /* Design a circle using Arc path
             paint2D.fillColor = Color.blue;
             paint2D.BeginPath();
             paint2D.Arc(new Vector2(400,800), 50f , 0f, 360f);
             paint2D.Fill();
+            */
 
-            // paint2D.strokeColor = Color.red;
-            // paint2D.BeginPath();
-            // paint2D.ArcTo(p0Line,p1Line,5f);
-            // paint2D.ArcTo(p1Line,p2Line,6f);
-            // paint2D.ArcTo(p2Line,p3Line,10f);
-            // paint2D.ArcTo(p4Line,p5Line,20f);
-            // paint2D.ArcTo(p6Line,p7Line,5f);
-            // paint2D.ArcTo(p8Line,p9Line,1f);
-            
         }
     }
 }
