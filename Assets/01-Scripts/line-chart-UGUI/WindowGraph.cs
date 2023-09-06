@@ -8,13 +8,12 @@ namespace _01_Scripts.line_chart_UGUI
     {
         [SerializeField] private Sprite circleSprite;
         private RectTransform _graphContainer;
-        public int lengthOfLineRenderer = 20;
 
         private void Awake()
         {
             _graphContainer = transform.Find("graphContainer").GetComponent<RectTransform>();
 
-            List<int> valueList = new List<int>() { 5, 98, 56, 45, 30, 22, 17, 15, 13, 17, 25, 37, 40, 36, 33 };
+            List<int> valueList = new List<int> { 5, 98, 56, 45, 30, 22, 17, 15, 13, 17, 25, 37, 40, 36, 33 };
             ShowGraph(valueList);
         }
 
@@ -40,17 +39,19 @@ namespace _01_Scripts.line_chart_UGUI
             float xSize = 50f;
 
             GameObject lastCircleGameObject = null;
-            
+
             for (int i = 0; i < valueList.Count; i++)
             {
                 float xPosition = xSize + i * xSize;
                 //in this case normalized the value, so if is 0 not goes really in 0
                 float yPosition = valueList[i] / yMaximum * graphHeight;
                 GameObject circleGameObject = CreateCircle(new Vector2(xPosition, yPosition));
-                if (lastCircleGameObject != null) 
-                { 
-                    CreateDotConnection(lastCircleGameObject.GetComponent<RectTransform>().anchoredPosition, circleGameObject.GetComponent<RectTransform>().anchoredPosition); 
-                } 
+                if (lastCircleGameObject != null)
+                {
+                     CreateDotConnection(lastCircleGameObject.GetComponent<RectTransform>().anchoredPosition,
+                         circleGameObject.GetComponent<RectTransform>().anchoredPosition);
+                }
+
                 lastCircleGameObject = circleGameObject;
             }
         }
@@ -59,22 +60,28 @@ namespace _01_Scripts.line_chart_UGUI
         {
             GameObject go = new GameObject("dotConnection", typeof(Image));
             go.transform.SetParent(_graphContainer, false);
-            gameObject.GetComponent<Image>().color = Color.white;
+            go.GetComponent<Image>().color = new Color(1, 1, 1, .5f);
             RectTransform rectTransform = go.GetComponent<RectTransform>();
-
-            LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
-            lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-            lineRenderer.widthMultiplier = 0.2f;
             
             float distance = Vector2.Distance(dotPositionA, dotPositionB);
-            lineRenderer.positionCount = lengthOfLineRenderer;
-            // Vector2 dir = (dotPositionB - dotPositionA).normalized;
-            // rectTransform.anchorMin = new Vector2(0, 0);
-            // rectTransform.anchorMax = new Vector2(0, 0);
-            // rectTransform.sizeDelta = new Vector2(100, 3);
-            // rectTransform.anchoredPosition = dotPositionA + dir * distance * .5f;
-            //
-            // rectTransform.localEulerAngles = new Vector3(0, 0, Vector2.Angle(dotPositionA, dotPositionB));
+            
+            rectTransform.anchorMin = new Vector2(0, 0);
+            rectTransform.anchorMax = new Vector2(0, 0);
+            rectTransform.sizeDelta = new Vector2(distance, 3);
+            rectTransform.anchoredPosition = dotPositionA;
+            float posX = dotPositionA.y;
+            float posY = dotPositionB.y;
+
+            float angle = Mathf.Atan2(posY,posX ) * Mathf.Rad2Deg;
+            
+            rectTransform.Rotate(new Vector3(0,0,angle));
+
+            Vector3 pos = (dotPositionA + dotPositionB) / 2;
+            rectTransform.transform.position = pos;
+
+            //rectTransform.Rotate(new Vector3(angle,0 ,0));
+            // dare come rotazione l 'angolo dal primo punto al secondo punto con Mathf.Atan2() così da indirizzarlo verso l'altro punto
+            //mettere poi l'immagine al centro tra i due punti
         }
     }
 }
