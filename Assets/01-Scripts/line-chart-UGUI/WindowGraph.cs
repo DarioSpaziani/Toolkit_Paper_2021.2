@@ -63,25 +63,21 @@ namespace _01_Scripts.line_chart_UGUI
             go.GetComponent<Image>().color = new Color(1, 1, 1, .5f);
             RectTransform rectTransform = go.GetComponent<RectTransform>();
             
-            float distance = Vector2.Distance(dotPositionA, dotPositionB);
+            float distance = Vector2.Distance(dotPositionB, dotPositionA);
             
             rectTransform.anchorMin = new Vector2(0, 0);
             rectTransform.anchorMax = new Vector2(0, 0);
             rectTransform.sizeDelta = new Vector2(distance, 3);
             rectTransform.anchoredPosition = dotPositionA;
-            float posX = dotPositionA.y;
-            float posY = dotPositionB.y;
 
-            float angle = Mathf.Atan2(posY,posX ) * Mathf.Rad2Deg;
-            
+            float angle = Vector2.Angle(dotPositionB,dotPositionA ) * Mathf.Rad2Deg;
             rectTransform.Rotate(new Vector3(0,0,angle));
+            
+            float centerX = (dotPositionB.x + dotPositionA.x) / 2;
+            float centerY = (dotPositionB.y + dotPositionA.y) / 2;
 
-            Vector3 pos = (dotPositionA + dotPositionB) / 2;
-            rectTransform.transform.position = pos;
-
-            //rectTransform.Rotate(new Vector3(angle,0 ,0));
-            // dare come rotazione l 'angolo dal primo punto al secondo punto con Mathf.Atan2() così da indirizzarlo verso l'altro punto
-            //mettere poi l'immagine al centro tra i due punti
+            Vector2 centerPos = new Vector2(centerX,centerY);
+            rectTransform.transform.position = centerPos;
         }
     }
 }

@@ -9,16 +9,16 @@ namespace _01_Scripts.line_chart
     
         #region Line Variables
 
-        private readonly Vector2 _p0Line = new(100, 600);
-        private readonly Vector2 _p1Line = new(150, 620);
-        private readonly Vector2 _p2Line = new(200, 650);
-        private readonly Vector2 _p3Line = new(250, 580);
+        private readonly Vector2 _p0Line = new(100, 900);
+        private readonly Vector2 _p1Line = new(150, 120);
+        private readonly Vector2 _p2Line = new(200, 450);
+        private readonly Vector2 _p3Line = new(250, 550);
         private readonly Vector2 _p4Line = new(300, 620);
-        private readonly Vector2 _p5Line = new(350, 540);
-        private readonly Vector2 _p6Line = new(400, 550);
-        private readonly Vector2 _p7Line = new(450, 570);
-        private readonly Vector2 _p8Line = new(500, 620);
-        private readonly Vector2 _p9Line = new(550, 600);
+        private readonly Vector2 _p5Line = new(350, 640);
+        private readonly Vector2 _p6Line = new(400, 750);
+        private readonly Vector2 _p7Line = new(450, 870);
+        private readonly Vector2 _p8Line = new(500, 720);
+        private readonly Vector2 _p9Line = new(550, 700);
 
         #endregion
 
@@ -30,8 +30,10 @@ namespace _01_Scripts.line_chart
         void DrawCanvas(MeshGenerationContext ctx)
         {
             var paint2D = ctx.painter2D;
+            var circlePainter2D = ctx.painter2D;
 
-            paint2D.strokeColor = Color.green;
+            circlePainter2D.strokeColor = Color.red;
+            paint2D.strokeColor = new Color(255,255,255,0.3f);
             paint2D.lineWidth = 10f;
             paint2D.lineJoin = LineJoin.Miter;
             paint2D.lineCap = LineCap.Round;
@@ -50,6 +52,47 @@ namespace _01_Scripts.line_chart
             paint2D.LineTo(_p8Line);
             paint2D.LineTo(_p9Line);
             paint2D.Stroke();
+            
+            
+            circlePainter2D.BeginPath();
+            circlePainter2D.Arc(_p0Line, 5f , 0f, 360f);
+            circlePainter2D.Fill();
+            
+            circlePainter2D.BeginPath();
+            circlePainter2D.Arc(_p1Line, 5f , 0f, 360f);
+            circlePainter2D.Fill();
+            
+            circlePainter2D.BeginPath();
+            circlePainter2D.Arc(_p2Line, 5f , 0f, 360f);
+            circlePainter2D.Fill();
+            
+            circlePainter2D.BeginPath();
+            circlePainter2D.Arc(_p3Line, 5f , 0f, 360f);
+            circlePainter2D.Fill();
+            
+            circlePainter2D.BeginPath();
+            circlePainter2D.Arc(_p4Line, 5f , 0f, 360f);
+            circlePainter2D.Fill();
+            
+            circlePainter2D.BeginPath();
+            circlePainter2D.Arc(_p5Line, 5f , 0f, 360f);
+            circlePainter2D.Fill();
+            
+            circlePainter2D.BeginPath();
+            circlePainter2D.Arc(_p6Line, 5f , 0f, 360f);
+            circlePainter2D.Fill();
+            
+            circlePainter2D.BeginPath();
+            circlePainter2D.Arc(_p7Line, 5f , 0f, 360f);
+            circlePainter2D.Fill();
+            
+            circlePainter2D.BeginPath();
+            circlePainter2D.Arc(_p8Line, 5f , 0f, 360f);
+            circlePainter2D.Fill();
+            
+            circlePainter2D.BeginPath();
+            circlePainter2D.Arc(_p9Line, 5f , 0f, 360f);
+            circlePainter2D.Fill();
 
             /* Design a circle using Arc path
             paint2D.fillColor = Color.blue;
