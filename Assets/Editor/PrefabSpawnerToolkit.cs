@@ -10,7 +10,7 @@ namespace Editor
     public class PrefabSpawnerToolkit : EditorWindow
     {
         #region Variables
-        
+
         [SerializeField] private VisualTreeAsset tree;
 
         private LayerMaskField _layerInput;
@@ -48,6 +48,12 @@ namespace Editor
             if (sceneView == null) return;
             if (!_activeToggle.value)
             {
+                if (!_activeToggle.value)
+                {
+                    return;
+                }
+
+                var evt = Event.current;
                 return;
             }
             var evt = Event.current;
@@ -57,6 +63,15 @@ namespace Editor
                 var ray = HandleUtility.GUIPointToWorldRay(evt.mousePosition);
                 Physics.Raycast(ray, out var raycastHit, Mathf.Infinity, _layerInput.value);
 
+                    if (raycastHit.collider)
+                    {
+                        var obj = CreatePrefab(raycastHit.point);
+                        ApplyRandomRotation(obj, raycastHit.normal);
+                        ApplyRandomScale(obj);
+
+                        Undo.RegisterCreatedObjectUndo(obj,
+                            "Prefab Spawned"); //utile per tornare indietro di un azione nel caso si commetta uno sbaglio
+                    }
                 if (raycastHit.collider)
                 {
                     var obj = CreatePrefab(raycastHit.point);
@@ -67,16 +82,17 @@ namespace Editor
                 }
             }
         }
-        
+
         private GameObject CreatePrefab(Vector3 pos)
         {
-            var obj = PrefabUtility.InstantiatePrefab(_prefab) as GameObject; //permette di creare un prefab è come l'instantiate
+            var obj = PrefabUtility
+                .InstantiatePrefab(_prefab) as GameObject; //permette di creare un prefab è come l'instantiate
 
             if (obj != null)
             {
                 obj.transform.position = pos;
-                
             }
+
             return obj;
         }
 
@@ -86,7 +102,7 @@ namespace Editor
             var maxScale = _maxScaleInput.value;
             obj.transform.localScale = Vector3.one * Random.Range(minScale, maxScale);
         }
-        
+
         private void ApplyRandomRotation(GameObject obj, Vector3 normal)
         {
             var minRotation = _minRotationInput.value;
@@ -117,10 +133,7 @@ namespace Editor
             _alignToNormalToogle = rootVisualElement.Q<Toggle>("AlignToNormal");
 
             var prefabInput = rootVisualElement.Q<ObjectField>("Prefab");
-            prefabInput.RegisterValueChangedCallback(evt =>
-            {
-                _prefab = evt.newValue as GameObject;
-            });
+            prefabInput.RegisterValueChangedCallback(evt => { _prefab = evt.newValue as GameObject; });
         }
     }
 }
