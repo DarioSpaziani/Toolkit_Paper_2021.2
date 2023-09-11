@@ -5,20 +5,12 @@ using UnityEngine.UIElements;
 
 namespace Editor
 {
-    public class LineChartWindow : EditorWindow
+    public class LineChartWindow : UnityEditor.Editor
     {
-        [MenuItem("Tools/LineChart Window")]
-        public static void ShowWindow()
+        [MenuItem("Tools/Line Chart")]
+        public static void Init()
         {
-            LineChartWindow window = GetWindow<LineChartWindow>();
-            window.titleContent = new GUIContent("Line Chart Window");
-        }
-
-        void CreateGUI()
-        {
-            VisualElement root = rootVisualElement;
-        
-            root.Add(new LineChart());
+            
         }
     }
 }

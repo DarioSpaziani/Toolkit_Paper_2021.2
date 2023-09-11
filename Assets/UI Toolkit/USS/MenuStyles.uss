@@ -8,20 +8,22 @@
     -unity-text-outline-color: rgb(255, 255, 255);
     -unity-text-outline-width: 0;
     text-shadow: 0 0 0 rgba(255, 255, 255, 0.98);
-    -unity-font-definition: url('project://database/Assets/Font/potra/Potra%20SDF.asset?fileID=11400000&guid=9667b47bedc490b419c9996746bf66c2&type=2#Potra SDF');
+    -unity-font-definition: url('project://database/Assets/09-Fonts/potra/Potra%20SDF.asset?fileID=11400000&guid=9667b47bedc490b419c9996746bf66c2&type=2#Potra SDF');
     transition-duration: 0.2s;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(255, 255, 255);
 }
 
 .menu-button:hover {
-    -unity-font-definition: url('project://database/Assets/Font/potra/Potra%20SDF.asset?fileID=11400000&guid=9667b47bedc490b419c9996746bf66c2&type=2#Potra SDF');
+    -unity-font-definition: url('project://database/Assets/09-Fonts/potra/Potra%20SDF.asset?fileID=11400000&guid=9667b47bedc490b419c9996746bf66c2&type=2#Potra SDF');
     -unity-font-style: bold;
     color: rgb(255, 255, 255);
-    font-size: 65px;
-    -unity-text-outline-color: rgba(255, 255, 255, 0);
+    font-size: 75px;
+    -unity-text-outline-color: rgb(255, 255, 255);
     text-shadow: 0 0 0 rgba(255, 255, 255, 0);
     rotate: -10deg;
     background-color: rgba(0, 0, 0, 0);
     transition-duration: 0.5s;
+    -unity-font: url('project://database/Assets/09-Fonts/potra/Potra.ttf?fileID=12800000&guid=2cb6cb6c0fb09fb4f92b839fc4c458d2&type=3#Potra');
+    -unity-text-outline-width: 3px;
 }
