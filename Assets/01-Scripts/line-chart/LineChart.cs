@@ -9,16 +9,16 @@ namespace _01_Scripts.line_chart
     
         #region Line Variables
 
-        private readonly Vector2 _p0Line = new(100, 900);
-        private readonly Vector2 _p1Line = new(150, 120);
-        private readonly Vector2 _p2Line = new(200, 450);
-        private readonly Vector2 _p3Line = new(250, 550);
-        private readonly Vector2 _p4Line = new(300, 620);
-        private readonly Vector2 _p5Line = new(350, 640);
-        private readonly Vector2 _p6Line = new(400, 750);
-        private readonly Vector2 _p7Line = new(450, 870);
-        private readonly Vector2 _p8Line = new(500, 720);
-        private readonly Vector2 _p9Line = new(550, 700);
+        private readonly Vector2 _p0Line = new(250, 900);
+        private readonly Vector2 _p1Line = new(300, 300);
+        private readonly Vector2 _p2Line = new(350, 450);
+        private readonly Vector2 _p3Line = new(400, 550);
+        private readonly Vector2 _p4Line = new(450, 620);
+        private readonly Vector2 _p5Line = new(500, 640);
+        private readonly Vector2 _p6Line = new(550, 750);
+        private readonly Vector2 _p7Line = new(600, 870);
+        private readonly Vector2 _p8Line = new(650, 720);
+        private readonly Vector2 _p9Line = new(700, 700);
 
         #endregion
 
