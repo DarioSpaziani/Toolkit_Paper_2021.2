@@ -246,7 +246,7 @@ MonoBehaviour:
   obj: {fileID: 7335176420224820531, guid: fe0c38f5305f2e14ca7e033eed8192aa, type: 3}
   mask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   prefab: {fileID: 0}
   minRotation: {x: 0, y: 0, z: 0}
   maxRotation: {x: 0, y: 0, z: 0}
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 1503694716}
   - component: {fileID: 1503694715}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

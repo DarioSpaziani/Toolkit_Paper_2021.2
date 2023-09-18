@@ -45,16 +45,20 @@ namespace Editor
 
         private void OnSceneGUI(SceneView sceneView)
         {
-            if (sceneView == null) return;
-            if (!_activeToggle.value)
+            if (sceneView == null)
             {
                 if (!_activeToggle.value)
                 {
+                    if (!_activeToggle.value)
+                    {
+                        return;
+                    }
+
                     return;
                 }
-                
-                return;
             }
+            
+
             var evt = Event.current;
 
             if (evt.IsLeftMouseButtonDown())
@@ -62,22 +66,24 @@ namespace Editor
                 var ray = HandleUtility.GUIPointToWorldRay(evt.mousePosition);
                 Physics.Raycast(ray, out var raycastHit, Mathf.Infinity, _layerInput.value);
 
-                    if (raycastHit.collider)
-                    {
-                        var obj = CreatePrefab(raycastHit.point);
-                        ApplyRandomRotation(obj, raycastHit.normal);
-                        ApplyRandomScale(obj);
-
-                        Undo.RegisterCreatedObjectUndo(obj,
-                            "Prefab Spawned"); //utile per tornare indietro di un azione nel caso si commetta uno sbaglio
-                    }
                 if (raycastHit.collider)
                 {
                     var obj = CreatePrefab(raycastHit.point);
-                    ApplyRandomRotation(obj,raycastHit.normal);
+                    ApplyRandomRotation(obj, raycastHit.normal);
                     ApplyRandomScale(obj);
-                    
-                    Undo.RegisterCreatedObjectUndo(obj, "Prefab Spawned");  //utile per tornare indietro di un azione nel caso si commetta uno sbaglio
+
+                    Undo.RegisterCreatedObjectUndo(obj,
+                        "Prefab Spawned"); //utile per tornare indietro di un azione nel caso si commetta uno sbaglio
+                }
+
+                if (raycastHit.collider)
+                {
+                    var obj = CreatePrefab(raycastHit.point);
+                    ApplyRandomRotation(obj, raycastHit.normal);
+                    ApplyRandomScale(obj);
+
+                    Undo.RegisterCreatedObjectUndo(obj,
+                        "Prefab Spawned"); //utile per tornare indietro di un azione nel caso si commetta uno sbaglio
                 }
             }
         }

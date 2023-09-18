@@ -2,6 +2,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
+using UnityEngine.Serialization;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
@@ -13,7 +14,7 @@ namespace Editor
         public GameObject prefab;
         public Vector3 minPos;
         public Vector3 maxPos;
-        public LayerMask layerMask;
+        public LayerMask mask;
         public Vector3 minRotation;
         public Vector3 maxRotation;
         public int minScale;
@@ -41,7 +42,7 @@ namespace Editor
             prefab = (GameObject)EditorGUILayout.ObjectField(prefab, typeof(GameObject), true);
             minPos = EditorGUILayout.Vector3Field("Position", minPos);
             maxPos = EditorGUILayout.Vector3Field("Position", maxPos);
-            layerMask = EditorGUILayout.LayerField(0 >> 8);
+            mask = EditorGUILayout.LayerField(mask);
             
             EditorGUILayout.LabelField("Rotation", EditorStyles.boldLabel);
             minRotation = EditorGUILayout.Vector3Field("MinRotation", minRotation);
